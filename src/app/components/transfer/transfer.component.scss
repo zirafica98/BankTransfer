@@ -1,0 +1,138 @@
+.transfer-form {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+.transfer-card {
+  width: 420px;
+  padding: 1.8rem;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  }
+
+  mat-card-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #3f51b5;
+    margin-bottom: 1rem;
+  }
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.mat-mdc-form-field {
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.mat-mdc-text-field-wrapper {
+  border-radius: 10px !important;
+  background: #fff !important;
+}
+
+.visible-select-panel {
+  background: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px !important;
+  color: #333 !important;
+}
+
+.account-option {
+  display: block;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+
+  .account-id {
+    font-weight: 500;
+    color: #222;
+  }
+
+  .account-balance {
+    color: #4caf50;
+    font-weight: 600;
+  }
+}
+
+.modern-btn {
+  width: 100%;
+  height: 46px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-transform: none;
+  background-color: #3f51b5;
+  color: #fff;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #303f9f;
+    box-shadow: 0 4px 10px rgba(63, 81, 181, 0.4);
+  }
+
+  &:disabled {
+    background-color: #c5cae9;
+    color: #f0f0f0;
+  }
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  color: #555;
+  gap: 0.5rem;
+}
+
+.error-message {
+  color: #e53935;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.success-message {
+  color: #4caf50;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.mat-mdc-select-panel, 
+.mat-mdc-select-panel:not([class*='mat-elevation-z']) {
+  background-color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 10px !important;
+  color: #222 !important;
+  backdrop-filter: none !important; 
+  opacity: 1 !important;
+}
+
+.mat-mdc-option {
+  background-color: #ffffff !important;
+  color: #222 !important;
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+}
+
+.mat-mdc-option:hover, 
+.mat-mdc-option.mdc-list-item--selected {
+  background-color: #e8eaf6 !important;
+  color: #1a237e !important;
+}
+
+.cdk-overlay-pane {
+  background: transparent !important;
+}

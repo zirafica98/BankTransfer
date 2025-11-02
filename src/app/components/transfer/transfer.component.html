@@ -1,0 +1,63 @@
+<form [formGroup]="transferForm" (ngSubmit)="onSubmit()" class="transfer-form">
+  <mat-card class="transfer-card">
+    <mat-card-title>Bank Transfer</mat-card-title>
+    <mat-card-content>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>From Account</mat-label>
+        <mat-select formControlName="mainAccountId" panelClass="visible-select-panel">
+          <mat-option [value]="null" disabled>-- Choose an account --</mat-option>
+          <mat-option *ngFor="let account of (bankingService.accounts$ | async)" [value]="account.id">
+            <div class="account-option">
+              <span class="account-id">{{ account.id }}</span><br>
+              <span class="account-balance"> {{ account.balance | currency }}</span>
+            </div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>To Account</mat-label>
+        <mat-select formControlName="secondAccountId" panelClass="visible-select-panel">
+          <mat-option [value]="null" disabled>-- Choose an account --</mat-option>
+          <mat-option *ngFor="let account of (bankingService.accounts$ | async)" [value]="account.id">
+            <div class="account-option">
+              <span class="account-id">{{ account.id }}</span><br>
+              <span class="account-balance"> {{ account.balance | currency }}</span>
+            </div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" formControlName="amount" placeholder="Enter amount">
+      </mat-form-field>
+
+      <mat-error *ngIf="transferForm.errors?.['sameAccount']">
+        You cannot transfer to the same account
+      </mat-error>
+
+      <button mat-flat-button color="primary" class="modern-btn" type="submit"
+              [disabled]="!transferForm.valid || isLoading">
+        Send Money
+      </button>
+
+      <div class="status" *ngIf="isLoading">
+        <mat-progress-spinner mode="indeterminate" diameter="26" color="accent"></mat-progress-spinner>
+        <span>Processing...</span>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</form>
+
+

@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="main-toolbar">
+  <span class="app-title">MyBank</span>
+
+  <span class="spacer"></span>
+
+  <nav class="nav-links">
+    <a mat-button routerLink="/transfer" routerLinkActive="active-link">Transfer</a>
+    <a mat-button routerLink="/transactions" routerLinkActive="active-link">List transactions</a>
+  </nav>
+</mat-toolbar>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
